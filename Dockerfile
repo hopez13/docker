@@ -21,4 +21,4 @@ rm -rf /var/lib/apt/lists/* && \
 rm -rf /var/lib/apt/archives/* && \
 rm -rf /var/lib/apt/caches/*
 
-ENV TC_BIN = /build/tc/bin
+ENV PATH "$PATH:/build/tc/bin"
