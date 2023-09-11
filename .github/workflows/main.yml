@@ -1,0 +1,18 @@
+name:  Publish
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+      - uses: actions/checkout@4
+      - uses: elgohr/Publish-Docker-Github-Action@main
+        with:
+          name: hopez13/tc
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          dockerfile: Dockerfile
+          buildoptions: --force-rm --compress --no-cache --squash
+          tags: "latest"
