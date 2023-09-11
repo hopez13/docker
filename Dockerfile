@@ -13,7 +13,7 @@ WORKDIR /build
 COPY --from=initial /tc /build/tc
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 apt-get install --force-yes -y sed sudo cpio curl tar zstd libssl-dev openssl libxml2 \
-which bc gawk perl diffutils make python3 xz-utils bison flex git unzip && \
+which bc gawk perl diffutils locales make python3 xz-utils bison flex git unzip && \
 apt autoremove && apt clean && \
 rm -rf /usr/share/man/* && \
 rm -rf /var/lib/apt/lists/* && \
