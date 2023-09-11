@@ -18,11 +18,11 @@ apt autoremove && apt clean && \
 rm -rf /usr/share/man/* && \
 rm -rf /var/lib/apt/lists/* && \
 rm -rf /var/lib/apt/archives/* && \
-rm -rf /var/lib/apt/caches/*
+rm -rf /var/lib/apt/caches/* && \
+echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/environment && \
+echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen && \
+echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf && \
+sudo locale-gen en_US.UTF-8
+
 
 ENV PATH "$PATH:/build/tc/bin"
-
-echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/environment
-echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
-echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
-sudo locale-gen en_US.UTF-8
