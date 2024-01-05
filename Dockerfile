@@ -1,7 +1,7 @@
 FROM ubuntu:mantic AS initial
 WORKDIR /tc
 RUN apt-get update -y && apt install -y curl tar zstd
-RUN curl -Lo clang.tar.zst https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/09092023/neutron-clang-09092023.tar.zst && \
+RUN curl -Lo clang.tar.zst https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/05012024/neutron-clang-05012024.tar.zst && \
 tar -I zstd -xf clang.tar.zst && \
 rm -rf /tc/lib/cmake && \
 rm -f /tc/lib/libclang-cpp.so.18git && \
