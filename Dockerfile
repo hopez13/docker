@@ -1,4 +1,4 @@
-FROM ubuntu:mantic AS initial
+FROM ubuntu:noble AS initial
 WORKDIR /tc
 RUN apt-get update -y && apt install -y curl tar zstd
 RUN curl -Lo clang.tar.zst https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/05012024/neutron-clang-05012024.tar.zst && \
